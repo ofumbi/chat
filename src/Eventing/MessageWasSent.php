@@ -18,8 +18,8 @@ class MessageWasSent implements ShouldBroadcast
 
     public function __construct(Message $message)
     {
+		$message->load('sender');
         $this->message = $message;
-
         $this->createNotifications();
     }
 
